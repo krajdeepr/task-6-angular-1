@@ -1,0 +1,21 @@
+#foot {
+    text-align: center;
+    background-color: #283140;
+    height: 35px;
+    color: white;
+    font-size: 12px;
+    clear: both;
+    line-height: 35px;
+    bottom: 0;
+  }
+  
+  .foot-text1 {
+    float: left;
+    margin: 0;
+    margin-left: 20px;
+  }
+  .foot-text2 {
+    margin: 0;
+    float: right;
+    margin-right: 20px;
+  }

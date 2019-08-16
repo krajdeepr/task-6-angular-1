@@ -1,0 +1,41 @@
+.total{ 
+    width: 70%; 
+    margin-bottom: 50px; 
+    float: left; 
+    margin-left: 200px;
+} 
+.total-picture{ 
+    float: left; 
+    width: 170px; 
+    height: 191px; 
+    margin-top:5px; 
+    margin-right:20px; 
+    margin-bottom:10px; 
+    background-color: #d0d0d0; 
+} 
+.total-heading{ 
+    color :x 283140; 
+    font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+} 
+.total-date{ 
+    position:relative; 
+    bottom:15px; 
+    font-size:11px; 
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+} 
+.total-content{ 
+    position:relative; 
+    bottom:15px; 
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    height: 94px;
+} 
+.total-button{ 
+    position: relative; 
+    bottom:21px; 
+    background-color :#d64542; 
+    margin-bottom:5px; 
+    color: white; 
+    height: 30px; 
+    width: 150px; 
+    border: 0; 
+} 
