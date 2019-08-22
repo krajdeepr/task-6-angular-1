@@ -2,15 +2,16 @@
         <label class="side-label2"><strong>User
                 login</strong></label><br />
             <button class="side-button" id="validateEvent" type="button">Log out</button>
-  <h1 id="news-heading1">NEWSFEED</h1>
+  <h1 id="news-heading1">{{heading}}</h1>
   <div class="side">
-        <select id="side-select">
-            <option value="" style="display: none">Select source</option>
-            <option value="One">BBC</option>
-            <option value="Two">CNN</option>
-            <option value="Three">ZION</option>
+        <select id="side-select" [(ngModel)]="heading" routerLink="/sourceData/{{heading}}">
+            <option value="Select source" style="display: none">Select source</option>
+            <option value="ALL">ALL</option>
+            <option value="BBC">BBC</option>
+            <option value="CNN">CNN</option>
+            <option value="ZION">ZION</option>
 
         </select>
   </div>
-  <button class="article-button" id="validateEvent" type="button">Add Article</button>
+  <button class="article-button" id="validateEvent" type="button"  routerLink="/addArticle">Add Article</button>
 </header>

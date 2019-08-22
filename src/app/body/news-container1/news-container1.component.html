@@ -1,46 +1,9 @@
-<div class="total">
+<div class="total" *ngFor="let display of displayData">
     <div>
-        <div class="total-picture"></div>
-        <h2 class="total-heading">Title One</h2>
-        <p class="total-date">Posted on <strong>7 July,2019</strong> // Category:<strong>Category One</strong></p>
-        <p class="total-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, nam est. Distinctio
-            consequuntur voluptatum rerum suscipit? Qui, iste. Earum nostrum ex numquam alias aliquam ad odio
-            placeat ab expedita nulla excepturi dolorum commodi, labore quis possimus iste illum. Deleniti
-            rem, explicabo porro ipsam cumque cum. Ipsa cupiditate, officiis ex similique ea corrupti quaerat eos
-            nemo</p>
-        <button class="total-button" type="button">Continue Reading</button>
+        <img class="total-picture" src="{{display.image}}">
+        <h2 class="total-heading">{{display.heading }}</h2>
+        <p class="total-date">{{display.date}}</p>
+        <p class="total-content">{{display.content}}</p>
+        <button class="total-button" type="button" [routerLink]="['/button/',display.id]">Continue Reading</button>
     </div>
-    <div>
-    <div class="total-picture"></div>
-        <h2 class="total-heading">Title One</h2>
-        <p class="total-date">Posted on <strong>7 July,2019</strong> // Category:<strong>Category One</strong></p>
-        <p class="total-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, nam est. Distinctio
-            consequuntur voluptatum rerum suscipit? Qui, iste. Earum nostrum ex numquam alias aliquam ad odio
-            placeat ab expedita nulla excepturi dolorum commodi, labore quis possimus iste illum. Deleniti
-            rem, explicabo porro ipsam cumque cum. Ipsa cupiditate, officiis ex similique ea corrupti quaerat eos
-            nemo</p>
-        <button class="total-button" type="button">Continue Reading</button>
-    </div>
-    <div>
-    <div class="total-picture"></div>
-        <h2 class="total-heading">Title One</h2>
-        <p class="total-date">Posted on <strong>7 July,2019</strong> // Category:<strong>Category One</strong></p>
-        <p class="total-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, nam est. Distinctio
-            consequuntur voluptatum rerum suscipit? Qui, iste. Earum nostrum ex numquam alias aliquam ad odio
-            placeat ab expedita nulla excepturi dolorum commodi, labore quis possimus iste illum. Deleniti
-            rem, explicabo porro ipsam cumque cum. Ipsa cupiditate, officiis ex similique ea corrupti quaerat eos
-            nemo</p>
-        <button class="total-button" type="button">Continue Reading</button>
-    </div>
-    <div>
-    <div class="total-picture"></div>
-        <h2 class="total-heading">Title One</h2>
-        <p class="total-date">Posted on <strong>7 July,2019</strong> // Category:<strong>Category One</strong></p>
-        <p class="total-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, nam est. Distinctio
-            consequuntur voluptatum rerum suscipit? Qui, iste. Earum nostrum ex numquam alias aliquam ad odio
-            placeat ab expedita nulla excepturi dolorum commodi, labore quis possimus iste illum. Deleniti
-            rem, explicabo porro ipsam cumque cum. Ipsa cupiditate, officiis ex similique ea corrupti quaerat eos
-            nemo</p>
-        <button class="total-button" type="button">Continue Reading</button>
-    </div>
-    </div>
+</div>

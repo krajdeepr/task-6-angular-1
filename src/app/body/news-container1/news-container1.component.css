@@ -7,7 +7,7 @@
 .total-picture{ 
     float: left; 
     width: 170px; 
-    height: 191px; 
+    height:229px; 
     margin-top:5px; 
     margin-right:20px; 
     margin-bottom:10px; 
@@ -16,6 +16,7 @@
 .total-heading{ 
     color :x 283140; 
     font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+    height: 59px;
 } 
 .total-date{ 
     position:relative; 
@@ -27,7 +28,7 @@
     position:relative; 
     bottom:15px; 
     font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-    height: 94px;
+    height: 101px;
 } 
 .total-button{ 
     position: relative; 
