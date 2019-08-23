@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Display } from '../display';
 import { DisplayService } from '../display.service';
 import { FormControl, Validators, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+userActivated = false;
   // tslint:disable-next-line: no-shadowed-variable
   constructor(public DisplayService: DisplayService, private router: Router) { }
   profileForm = new FormGroup({
@@ -25,7 +24,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(): void {
-    // console.log(this.profileForm.value);
     this.DisplayService.addDisplay(this.profileForm.value);
     this.router.navigate(['/']);
   }

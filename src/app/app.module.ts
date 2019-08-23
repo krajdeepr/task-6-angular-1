@@ -11,6 +11,8 @@ import { DisplayService } from './display.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './login/Auth.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     NewsContainer1Component,
     DashboardComponent,
     PopUpComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [DisplayService],
+  providers: [DisplayService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayService } from '../display.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
  heading = 'ALL';
-  constructor() { }
-
+  constructor() {}
   ngOnInit() {
   }
 sourceChange(event: Event): void {
