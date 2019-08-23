@@ -29,7 +29,7 @@ image: string; popUp: string; displayPopUp: Display[];
       }
     );
   }
-getPopUp(id: number) {
+getPopUp(id: string) {
   console.log(id);
   this.displayPopUp = this.DisplayService.addPopUp(id);
   console.log(this.displayPopUp);

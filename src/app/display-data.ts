@@ -1,7 +1,7 @@
 import { Display } from './display';
 export const displayData: Display[] = [
    {
-      id: 1,
+      id: '1',
       image: 'https://shawglobalnews.files.wordpress.com/2019/07/th148-724_2019_145327.jpg?quality=70&strip=all&w=720',
       heading: 'Boris Johnson to tell Merkel, Macron that Brexit can�t be stopped by UK parliament',
       date: 'July 24, 2019.',
@@ -14,7 +14,7 @@ export const displayData: Display[] = [
                 Oct. 31 without a deal unless it agrees to renegotiate the Brexit divorce.`
    },
    {
-      id: 2,
+      id: '2',
       image: 'https://shawglobalnews.files.wordpress.com/2019/08/bts-e1566085255944.jpg?quality=70&strip=all&w=720',
       heading: 'Plan ahead, buy in bulk and negotiate: A financial adviser�s advice for back-to-school shopping',
       date: 'Sept 3,2019',
@@ -26,7 +26,7 @@ export const displayData: Display[] = [
               Tanis Ell, a credit counsellor with the Credit Counselling Society Regina, to learn some tips on how to be
               financially responsible on the journey to Sept. 3.`
    },
-   { id: 3,
+   { id: '3',
       image: 'https://shawglobalnews.files.wordpress.com/2019/08/4942954.jpg?quality=70&strip=all&w=720',
       heading: 'The history of Canada�s ethics commissioner',
       date: 'August 17, 2019',
@@ -37,7 +37,7 @@ export const displayData: Display[] = [
               Prime Minister Justin Trudeau�s father, former prime minister Pierre Trudeau.In the summer of 1973, the elder
               Trudeau explained why he was introducing new conflict of interest guidelines for federal cabinet ministers.`
    },
-   { id: 4,
+   { id: '4',
       image: 'https://shawglobalnews.files.wordpress.com/2019/08/zehra-family.jpg?quality=70&strip=all&w=1200',
       heading: '�A horror�: B.C. law student still can�t reach her family due to Kashmir clampdown',
       date: 'Aug. 5,2019',

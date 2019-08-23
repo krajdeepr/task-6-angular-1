@@ -1,5 +1,4 @@
 export class Display {
-    id: number;
     image: string;
 
     heading: string;
@@ -9,4 +8,5 @@ export class Display {
     content: string;
 
     popUp: string;
+    id: string;
 }

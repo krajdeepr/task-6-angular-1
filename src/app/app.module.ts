@@ -13,7 +13,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/Auth.service';
-
+import {HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { AuthService } from './login/Auth.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [DisplayService, AuthService],
   bootstrap: [AppComponent]
