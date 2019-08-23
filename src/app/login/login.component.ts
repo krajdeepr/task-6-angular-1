@@ -3,15 +3,16 @@ import { AuthService } from 'src/app/login/Auth.service';
 import { NgForm } from '@angular/forms';
 import {AuthResponseData} from 'src/app/login/Auth.service';
 import { Router } from '@angular/router';
+import {DisplayService} from 'src/app/display.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css', '../../.././node_modules/bootstrap/dist/css/bootstrap.min.css']
 })
 export class LoginComponent implements OnInit {
   isLoginMode = true; authData: AuthResponseData;
   // tslint:disable-next-line: no-shadowed-variable
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private DisplayService: DisplayService) {
   }
   ngOnInit() {
   }
@@ -33,7 +34,9 @@ export class LoginComponent implements OnInit {
     } else {
       this.authService.signup(email, password);
     }
-
     form.reset();
+  }
+  onActivate(isLoginMode) {
+    this.DisplayService.activatedEmitter.next( isLoginMode);
   }
 }

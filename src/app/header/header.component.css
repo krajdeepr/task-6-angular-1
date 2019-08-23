@@ -25,13 +25,13 @@
     margin-right: 99px;
   }
   .side-button {
-    width: 64px;
+    width: 96px;
     height: 20px;
     background-color:gray;
     color: white;
     float: right;
     margin-top: -89px;
-    margin-right: 25px;
+    margin-right: 0px;
     border: 0;
   }
   .side {

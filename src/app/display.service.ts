@@ -1,22 +1,16 @@
 import {  Injectable } from '@angular/core';
 
-import {Subject, BehaviorSubject, Observable} from 'rxjs';
+import { Subject } from 'rxjs';
 import { Display } from './display';
 
 import { displayData } from './display-data';
 
 
 @Injectable()
-
 export class DisplayService {
 activatedEmitter = new Subject<boolean>();
-isLoginSubject = new BehaviorSubject<boolean>(this.hasToken());
 popup: Display[];
     constructor() { }
-    private hasToken(): boolean {
-        return !!localStorage.getItem('token');
-      }
-
     getDisplay(): Display[] {
         return displayData;
     }

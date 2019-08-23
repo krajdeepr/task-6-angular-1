@@ -1,8 +1,8 @@
 <div class="total" *ngFor="let display of displayData">
     <div>
         <img class="total-picture" src="{{display.image}}">
-        <h2 class="total-heading">{{display.heading }}</h2>
-        <p class="total-date">{{display.date}}</p>
+        <h2 class="total-heading">{{display.heading | uppercase}}</h2>
+        <p class="total-date">{{display.date | date}}</p>
         <p class="total-content">{{display.content}}</p>
         <button class="total-button" type="button" [routerLink]="['/button/',display.id]">Continue Reading</button>
     </div>
