@@ -1,16 +1,15 @@
 <header id="news">
-        <label class="side-label2" *ngIf="userActivated"><strong>Welcome</strong></label><br />
-            <button class="side-button" id="validateEvent" type="button" routerLink="/login">Authentication</button>
+  <label class="side-label2" *ngIf="userActivated"><strong>Welcome {{userActivated}}</strong></label><br />
+  <button class="side-button" id="validateEvent" type="button" routerLink="/login">Authentication</button>
   <h1 id="news-heading1">{{heading}}</h1>
   <div class="side">
-        <select id="side-select" [(ngModel)]="heading" routerLink="/sourceData/{{heading}}">
-            <option value="Select source" style="display: none">Select source</option>
-            <option value="ALL">ALL</option>
-            <option value="BBC">BBC</option>
-            <option value="CNN">CNN</option>
-            <option value="ZION">ZION</option>
-
-        </select>
+    <select id="side-select" [(ngModel)]="heading" routerLink="/sourceData/{{heading}}">
+      <option value="Select source" style="display: none">Select source</option>
+      <option value="ALL">ALL</option>
+      <option value="BBC">BBC</option>
+      <option value="CNN">CNN</option>
+      <option value="ZION">ZION</option>
+    </select>
   </div>
-  <button class="article-button" id="validateEvent" type="button" routerLink="/addArticle" >Add Article</button>
+  <button class="article-button" id="validateEvent" type="button" routerLink="/addArticle">Add Article</button>
 </header>

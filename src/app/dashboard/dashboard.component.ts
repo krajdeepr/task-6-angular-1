@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DisplayService } from '../display.service';
-import { FormControl, Validators, FormGroup} from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-userActivated = false;
+  userActivated = false;
   // tslint:disable-next-line: no-shadowed-variable
   constructor(public DisplayService: DisplayService, private router: Router) { }
   profileForm = new FormGroup({

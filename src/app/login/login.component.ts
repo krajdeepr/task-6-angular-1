@@ -10,6 +10,7 @@ import {DisplayService} from 'src/app/display.service';
   styleUrls: ['./login.component.css', '../../.././node_modules/bootstrap/dist/css/bootstrap.min.css']
 })
 export class LoginComponent implements OnInit {
+  email = '';
   isLoginMode = true; authData: AuthResponseData;
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private authService: AuthService, private router: Router, private DisplayService: DisplayService) {
@@ -23,20 +24,22 @@ export class LoginComponent implements OnInit {
     if (!form.valid) {
       return;
     }
-    const email = form.value.email;
+    this.email = form.value.email;
     const password = form.value.password;
     if (this.isLoginMode) {
-     this.authService.authData = this.authService.login(email, password);
-     console.log( this.authService.authData);
+     this.authService.authData = this.authService.login(this.email, password);
      if (!(this.authService.authData && this.authService.authData.constructor === Array && this.authService.authData.length === 0)) {
       this.router.navigate(['/']);
      }
     } else {
-      this.authService.signup(email, password);
+      this.authService.signup(this.email, password);
     }
     form.reset();
   }
   onActivate(isLoginMode) {
-    this.DisplayService.activatedEmitter.next( isLoginMode);
+    this.isLoginMode = isLoginMode;
+    if (this.isLoginMode) {
+    this.DisplayService.activatedEmitter.next(this.email);
+  }
   }
 }

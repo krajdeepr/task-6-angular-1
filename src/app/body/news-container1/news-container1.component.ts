@@ -16,24 +16,21 @@ export class NewsContainer1Component implements OnInit {
 
   ngOnInit() {
     this.DisplayService.onGetPost().subscribe(data => {
-      console.log(' data ', data);
       this.allData = data[Object.keys(data)[0]];
       this.displayData = this.allData;
-      console.log(this.allData);
     });
     this.route.params.subscribe(
       (params: Params) => {
         if (params.name === 'ALL') {
           // tslint:disable-next-line: no-unused-expression
           this.displayData = this.allData;
-          console.log(this.displayData);
         } else {
-          this.getSourceDisplay(params.name);
+          this.getSourceDisplay(this.allData, params.name);
         }
       }
     );
   }
-getSourceDisplay(name): void {
-  this.displayData = this.DisplayService.getSelectedDisplay(name);
+getSourceDisplay(allData, name): void {
+  this.displayData = allData.filter(value => value.source === name);
 }
 }
