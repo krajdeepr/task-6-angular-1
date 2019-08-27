@@ -15,7 +15,6 @@ export class PopUpComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
-        console.log(params);
         this.getPopUp(params.id);
       }
     );

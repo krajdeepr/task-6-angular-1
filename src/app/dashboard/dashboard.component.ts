@@ -25,7 +25,10 @@ export class DashboardComponent implements OnInit {
   }
   onSubmit(): void {
     this.DisplayService.addDisplay(this.profileForm.value);
-    this.router.navigate(['/']);
+    this.DisplayService.onCreatePost().subscribe(data => {
+        console.log(data);
+        this.router.navigate(['/']);
+      });
   }
 
 }
