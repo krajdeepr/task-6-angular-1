@@ -29,7 +29,6 @@ export class NewsContainer1Component implements OnInit {
       })
     )
     .subscribe(data => {
-      console.log(data);
       this.allData = data;
       this.displayData = data;
       this.DisplayService.setAllData(this.allData);

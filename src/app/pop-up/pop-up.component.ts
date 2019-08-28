@@ -15,13 +15,11 @@ export class PopUpComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
-        console.log(params.id);
         this.getPopUp(params.id);
       }
     );
   }
   getPopUp(id: string) {
-    console.log(this.DisplayService.allData);
-    this.displayPopUp = this.DisplayService.allData.filter(value => value.id === id);
+  this.displayPopUp = this.DisplayService.allData.filter(value => value.id === id);
   }
 }

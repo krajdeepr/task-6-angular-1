@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Display } from './display';
 import { HttpClient } from '@angular/common/http';
-import { displayData } from './display-data';
 @Injectable()
 export class DisplayService {
   activatedEmitter = new Subject<string>();

@@ -1,16 +1,17 @@
+<div class="form">
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  <label for="image" class="newsImage">Image url</label>
-  <input type="text" id="image" placeholder="Url" class="imageInput" formControlName="image" />
-  <label for="source" class="newsHeading">News Heading</label>
-  <input type="text" id="heading" placeholder="heading" class="newsInput" formControlName="heading" />
-  <label for="date" class="newsDate">Date</label>
-  <input type="text" id="date" placeholder="News Date" class="dateInput" formControlName="date" />
-  <label for="source" class="newsSource">News Source</label>
-  <input type="text" id="source" placeholder="Source" class="newsInput" formControlName="source" />
-  <label for="popUp" class="newsPopUp">News Popup</label>
-  <input type="text" id="popUp" placeholder="popUp content" class="popUpInput" formControlName="popUp" />
-  <label for="content" class="newsContent">Content</label>
-  <input type="text" id="content" placeholder="News Content" class="contentInput" formControlName="content" />
-
-  <input type="submit" value="Submit" class="submitBtn"  />
+  <label for="image">Image url</label>
+  <input type="text" id="image" placeholder="Url" formControlName="image" />
+  <label for="source">News Heading</label>
+  <input type="text" id="heading" placeholder="heading" formControlName="heading" />
+  <label for="date">Date</label>
+  <input type="text" id="date" placeholder="News Date" formControlName="date" />
+  <label for="source">News Source</label>
+  <input type="text" id="source" placeholder="Source" formControlName="source" />
+  <label for="popUp">News Popup</label>
+  <input type="text" id="popUp" placeholder="popUp content" formControlName="popUp" />
+  <label for="content">Content</label>
+  <input type="text" id="content" placeholder="News Content" formControlName="content" />
+  <input type="submit" value="Submit" />
 </form>
+</div>
