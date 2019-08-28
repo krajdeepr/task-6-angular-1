@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Display } from 'src/app/display';
 import { DisplayService } from 'src/app/display.service';
-import {Params, ActivatedRoute} from '@angular/router';
+import {Params, ActivatedRoute, Router} from '@angular/router';
 import {HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 @Component({
@@ -13,7 +13,7 @@ export class NewsContainer1Component implements OnInit {
   allData: Display[];
   displayData: Display[];
   // tslint:disable-next-line: no-shadowed-variable
-  constructor(private DisplayService: DisplayService, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private DisplayService: DisplayService, private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.DisplayService.onGetPost()
@@ -22,7 +22,7 @@ export class NewsContainer1Component implements OnInit {
         const postsArray = [];
         for (const key in responseData) {
           if (responseData.hasOwnProperty(key)) {
-            postsArray.push({ ...responseData[key]});
+            postsArray.push({ ...responseData[key], id: key });
           }
         }
         return postsArray;
@@ -32,6 +32,7 @@ export class NewsContainer1Component implements OnInit {
       console.log(data);
       this.allData = data;
       this.displayData = data;
+      this.DisplayService.setAllData(this.allData);
     });
     this.route.params.subscribe(
       (params: Params) => {

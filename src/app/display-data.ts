@@ -1,7 +1,7 @@
 import { Display } from './display';
 export const displayData: Display[] = [
    {
-      id: '1',
+      id: '-LnHvHiQ9hAEs4Ag9iPO',
       image: 'https://shawglobalnews.files.wordpress.com/2019/07/th148-724_2019_145327.jpg?quality=70&strip=all&w=720',
       heading: 'Boris Johnson to tell Merkel, Macron that Brexit can�t be stopped by UK parliament',
       date: 'July 24, 2019.',

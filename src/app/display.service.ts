@@ -6,17 +6,16 @@ import { displayData } from './display-data';
 @Injectable()
 export class DisplayService {
   activatedEmitter = new Subject<string>();
+  allData: Display[] = [];
   popup: Display[]; displayPosts: Display[]; dashBoard: Display;
   constructor(private http: HttpClient) {
   }
+  setAllData(data: Display[]) {
+    this.allData = data;
+  }
   addDisplay(name: Display) {
     // tslint:disable-next-line: member-ordering
-    // displayData.push(name);
     this.dashBoard = name;
-  }
-  addPopUp(id: string): Display[] {
-    // tslint:disable-next-line: triple-equals
-    return displayData.filter(value => value.id == id);
   }
   onCreatePost() {
     return this.http
