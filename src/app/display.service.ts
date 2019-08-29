@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable, of } from 'rxjs';
 import { Display } from './display';
 import { HttpClient } from '@angular/common/http';
+import { tap, catchError } from 'rxjs/operators';
 @Injectable()
 export class DisplayService {
   activatedEmitter = new Subject<string>();
@@ -19,18 +20,30 @@ export class DisplayService {
     // tslint:disable-next-line: member-ordering
     this.dashBoard = name;
   }
-  onCreatePost() {
+  onCreatePost(): Observable<Display[]> {
     return this.http
-      .post(
+      .post<Display[]>(
         'https://newsfeed-angular.firebaseio.com/posts.json',
         this.dashBoard
+      ).pipe(
+        tap(_ => console.log('Posted data')),
+        catchError(err => {
+          console.log(err);
+          return of(null);
+          })
       );
   }
-  onGetPost() {
+  onGetPost(): Observable<any> {
     return this.http
-      .get('https://newsfeed-angular.firebaseio.com/posts.json');
+      .get('https://newsfeed-angular.firebaseio.com/posts.json')
+      .pipe(
+        tap(_ => console.log('fetched data')),
+        catchError(err => {
+          console.log(err);
+          return of(null);
+          })
+      );
   }
-
   sourceList() {
     this.allData.forEach(data => {
       this.channelList.push(data.source);
