@@ -33,9 +33,9 @@ export class DisplayService {
           })
       );
   }
-  onGetPost(): Observable<any> {
+  onGetPost(): Observable<Display[]> {
     return this.http
-      .get('https://newsfeed-angular.firebaseio.com/posts.json')
+      .get<Display[]>('https://newsfeed-angular.firebaseio.com/posts.json')
       .pipe(
         tap(_ => console.log('fetched data')),
         catchError(err => {
