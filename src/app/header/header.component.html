@@ -4,11 +4,7 @@
   <h1 id="news-heading1">{{heading}}</h1>
   <div class="side">
     <select id="side-select" [(ngModel)]="heading" routerLink="/sourceData/{{heading}}">
-      <option value="Select source" style="display: none">Select source</option>
-      <option value="ALL">ALL</option>
-      <option value="BBC">BBC</option>
-      <option value="CNN">CNN</option>
-      <option value="ZION">ZION</option>
+      <option *ngFor="let channel of channelList" value="{{channel}}">{{channel}}</option>
     </select>
   </div>
   <button class="article-button" id="validateEvent" type="button" routerLink="/addArticle">Add Article</button>

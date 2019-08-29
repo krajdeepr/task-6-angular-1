@@ -8,15 +8,17 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   heading = 'ALL'; userActivated = ''; private activatedSub: Subscription;
+  channelList: string[] = ['ALL'];
   // tslint:disable-next-line: no-shadowed-variable
-  constructor(private DisplayService: DisplayService) { }
+  constructor(private DisplayService: DisplayService) {}
   ngOnInit() {
     this.activatedSub = this.DisplayService.activatedEmitter.subscribe(didActivate => {
       this.userActivated = didActivate;
     });
-  }
-  sourceChange(event: Event): void {
-    this.heading = (event.target as HTMLInputElement).value;
+
+    this.DisplayService.channelSources.subscribe(data => {
+      this.channelList = data;
+    });
   }
   ngOnDestroy(): void {
     this.activatedSub.unsubscribe();
