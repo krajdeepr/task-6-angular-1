@@ -4,14 +4,17 @@ import { NgForm } from '@angular/forms';
 import {AuthResponseData} from 'src/app/login/Auth.service';
 import { Router } from '@angular/router';
 import {DisplayService} from 'src/app/display.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css', '../../.././node_modules/bootstrap/dist/css/bootstrap.min.css']
 })
 export class LoginComponent implements OnInit {
-  email = '';
+  email = ''; password = '';
   isLoginMode = true; authData: AuthResponseData;
+ isLoading = false ;
+ error: string = null;
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private authService: AuthService, private router: Router, private DisplayService: DisplayService) {
   }
@@ -24,16 +27,25 @@ export class LoginComponent implements OnInit {
     if (!form.valid) {
       return;
     }
+    let authObs: Observable<AuthResponseData>;
     this.email = form.value.email;
-    const password = form.value.password;
+    this.password = form.value.password;
+    this.isLoading = true;
     if (this.isLoginMode) {
-     this.authService.authData = this.authService.login(this.email, password);
-     if (!(this.authService.authData && this.authService.authData.constructor === Array && this.authService.authData.length === 0)) {
-      this.router.navigate(['/']);
-     }
+    authObs = this.authService.login(this.email, this.password );
     } else {
-      this.authService.signup(this.email, password);
-    }
+      authObs = this.authService.signup(this.email, this.password);
+ }
+    authObs.subscribe(respData => {
+console.log(respData);
+this.isLoading = false;
+},
+errorMessage => {
+  console.log(errorMessage);
+  this.error = errorMessage;
+  this.isLoading = false;
+}
+);
     form.reset();
   }
   onActivate(isLoginMode) {

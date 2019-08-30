@@ -3,7 +3,7 @@
   <button class="side-button" id="validateEvent" type="button" routerLink="/login">Authentication</button>
   <h1 id="news-heading1">{{heading}}</h1>
   <div class="side">
-    <select id="side-select" [(ngModel)]="heading" routerLink="/sourceData/{{heading}}">
+    <select id="side-select" [(ngModel)]="heading" (change)="changeSource()">
       <option *ngFor="let channel of channelList" value="{{channel}}">{{channel}}</option>
     </select>
   </div>

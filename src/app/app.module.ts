@@ -14,6 +14,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/Auth.service';
 import {HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import {HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     PopUpComponent,
     LoginComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
