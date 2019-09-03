@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 @Injectable()
 export class DisplayService {
-  activatedEmitter = new Subject<string>();
+  activatedEmitter = new Subject<boolean>();
   allData: Display[] = []; channelList: string[] = ['ALL'];
   popup: Display[]; displayPosts: Display[]; dashBoard: Display;
   channelSources = new Subject<string[]>();

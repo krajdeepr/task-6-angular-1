@@ -15,7 +15,7 @@ registered?: boolean;
 @Injectable()
 export class AuthService {
   constructor(private http: HttpClient) { }
-  authData: AuthResponseData[] = []; loginData;
+  authData: AuthResponseData[] = []; loginData; loginMode;
   signup(email: string, password: string) {
     return this.http.post<AuthResponseData>(
       'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA4Ne8VJ6gO-eqnMsOsQigniruo0EW-kJI',
@@ -61,5 +61,9 @@ export class AuthService {
             break;
         }
     return throwError(errorMessage);
+  }
+  loginAuth(isLoginMode) {
+    console.log(isLoginMode);
+    this.loginMode = isLoginMode;
   }
 }

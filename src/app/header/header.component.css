@@ -34,6 +34,16 @@
     margin-right: 0px;
     border: 0;
   }
+  .logout-button{
+    width: 96px;
+    height: 20px;
+    background-color:gray;
+    color: white;
+    float: right;
+    margin-top: 20px;
+    margin-right: 0px;
+    border: 0;
+  }
   .side {
       position: relative;
       left: -756px;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/login/Auth.service';
+import { AuthService } from 'src/app/login/auth-service.service';
 import { NgForm } from '@angular/forms';
-import {AuthResponseData} from 'src/app/login/Auth.service';
+import {AuthResponseData} from 'src/app/login/auth-service.service';
 import { Router } from '@angular/router';
 import {DisplayService} from 'src/app/display.service';
 import { Observable } from 'rxjs';
@@ -15,8 +15,9 @@ export class LoginComponent implements OnInit {
   isLoginMode = true; authData: AuthResponseData;
  isLoading = false ;
  error: string = null;
+  constructor
   // tslint:disable-next-line: no-shadowed-variable
-  constructor(private authService: AuthService, private router: Router, private DisplayService: DisplayService) {
+(private authService: AuthService, private router: Router, private DisplayService: DisplayService, private AuthService: AuthService) {
   }
   ngOnInit() {
   }
@@ -39,6 +40,8 @@ export class LoginComponent implements OnInit {
     authObs.subscribe(respData => {
 console.log(respData);
 this.isLoading = false;
+this.isLoginMode = true;
+this.router.navigate(['/sourceData', 'ALL']);
 },
 errorMessage => {
   console.log(errorMessage);
@@ -47,11 +50,12 @@ errorMessage => {
 }
 );
     form.reset();
-  }
-  onActivate(isLoginMode) {
-    this.isLoginMode = isLoginMode;
     if (this.isLoginMode) {
-    this.DisplayService.activatedEmitter.next(this.email);
+      this.DisplayService.activatedEmitter.next(this.isLoginMode);
+    }
+    this.loginAction(this.isLoginMode);
   }
+  loginAction(isLoginMode) {
+    this.AuthService.loginAuth(isLoginMode);
   }
 }

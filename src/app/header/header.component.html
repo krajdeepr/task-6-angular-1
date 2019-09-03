@@ -1,8 +1,8 @@
 <header id="news">
-  <label class="side-label2" *ngIf="userActivated"><strong>Welcome {{userActivated}}</strong></label><br />
-  <button class="side-button" id="validateEvent" type="button" routerLink="/login">Authentication</button>
+  <button class="logout-button" *ngIf="userActivated" (click)="logoutAction()"><strong>Logout</strong></button><br />
+  <button class="side-button" *ngIf="!userActivated" id="validateEvent" type="button" routerLink="/login">Authentication</button>
   <h1 id="news-heading1">{{heading}}</h1>
-  <div class="side">
+  <div *ngIf="userActivated" class="side">
     <select id="side-select" [(ngModel)]="heading" (change)="changeSource()">
       <option *ngFor="let channel of channelList" value="{{channel}}">{{channel}}</option>
     </select>
