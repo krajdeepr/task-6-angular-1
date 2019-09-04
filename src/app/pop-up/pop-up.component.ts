@@ -3,47 +3,37 @@ import { Display } from 'src/app/display';
 import { Params, ActivatedRoute } from '@angular/router';
 import { DisplayService } from 'src/app/display.service';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-pop-up',
   templateUrl: './pop-up.component.html',
   styleUrls: ['./pop-up.component.css']
 })
 export class PopUpComponent implements OnInit {
-  image: string; popUp: string; displayPopUp: Display[]; comment = '';
+  image: string; popUp: string; displayPopUp: Display[]; comment = ''; id: string;
+  comments = [];
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private route: ActivatedRoute, private DisplayService: DisplayService) { }
   profileForm = new FormGroup({
     comments: new FormControl('', Validators.required)
   });
   ngOnInit() {
-    this.DisplayService.onGetComment()
-    .pipe(
-      map(responseData => {
-        const commentsArray = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            commentsArray.push({ ...responseData[key], id: key });
-          }
-        }
-        return commentsArray;
-      })
-    )
-    .subscribe(data => {
-      console.log(data);
-    });
     this.route.params.subscribe(
       (params: Params) => {
+        this.id = params.id;
         this.getPopUp(params.id);
       }
     );
   }
   getPopUp(id: string) {
-  this.displayPopUp = this.DisplayService.allData.filter(value => value.id === id);
+    this.displayPopUp = this.DisplayService.allData.filter(value => value.id === id);
+    this.comments = Object.keys(this.displayPopUp[0].comments);
   }
-  onSubmit(): void {
-        this.DisplayService.commentData(this.profileForm.value);
-        this.DisplayService.onCreateComment().subscribe(data => {
-        });
-      }
+  onSubmit() {
+     this.DisplayService.commentData(this.profileForm.value, this.id);
+     const subject = this.DisplayService.commentsSubject.subscribe(data => {
+      this.displayPopUp[0] = data[this.id];
+      this.comments = Object.keys(this.displayPopUp[0].comments);
+      subject.unsubscribe();
+    });
+  }
 }

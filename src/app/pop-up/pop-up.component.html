@@ -1,11 +1,21 @@
 <div class="total" *ngFor="let display of displayPopUp">
-<img class="image"src="{{display.image}}">
-<p class="popUpContent">{{display.popUp}}</p>
+  <img class="image"src="{{display.image}}">
+  <p class="popUpContent">{{display.popUp}}</p>
 </div>
 <div class="form">
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-<label for="comments">Comments</label>
-  <input type="text" id="content" placeholder="Enter Comments" formControlName="comments" />
-  <input type="submit" value="Submit" />
+<label class="label"for="comments">Add Comments</label>
+  <input type="text" class="content" placeholder="Enter Comments" required formControlName="comments" />
+  <input type="submit" class="submitButton" value="Save Comment" />
 </form>
+</div>
+<br>
+<div class="row">
+  <label class="label">Published comments</label>
+<br>
+  <div>
+    <p class="commentContent" *ngFor="let key of comments">
+      {{ displayPopUp[0].comments[key].comments }}
+    </p>
+  </div>
 </div>

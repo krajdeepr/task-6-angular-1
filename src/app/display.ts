@@ -6,4 +6,5 @@ export class Display {
     source: string;
     content: string;
     popUp: string;
+    comments;
 }
