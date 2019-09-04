@@ -9,7 +9,7 @@ export class DisplayService {
   allData: Display[] = []; channelList: string[] = ['ALL'];
   popup: Display[]; displayPosts: Display[]; dashBoard: Display;
   channelSources = new Subject<string[]>();
-
+comments: string[];
   constructor(private http: HttpClient) {
   }
   setAllData(data: Display[]) {
@@ -54,5 +54,33 @@ export class DisplayService {
 
   setChannelSource(sourcesList: string[]) {
       this.channelSources.next(sourcesList);
+  }
+  commentData(comments) {
+console.log(comments);
+this.comments = comments;
+  }
+  onCreateComment(): Observable<any> {
+    return this.http
+      .post<any>(
+        'https://newsfeed-angular.firebaseio.com/comments.json',
+        this.comments
+      ).pipe(
+        tap(_ => console.log('Posted comment')),
+        catchError(err => {
+          console.log(err);
+          return of(null);
+          })
+      );
+  }
+  onGetComment(): Observable<any> {
+    return this.http
+      .get<any>('https://newsfeed-angular.firebaseio.com/comments.json')
+      .pipe(
+        tap(_ => console.log('fetched comment')),
+        catchError(err => {
+          console.log(err);
+          return of(null);
+          })
+      );
   }
 }

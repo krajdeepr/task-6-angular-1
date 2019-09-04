@@ -15,9 +15,10 @@ export class LoginComponent implements OnInit {
   isLoginMode = true; authData: AuthResponseData;
  isLoading = false ;
  error: string = null;
-  constructor
+ // tslint:disable-next-line: no-shadowed-variable
+  constructor(private authService: AuthService, private router: Router, private DisplayService: DisplayService,
   // tslint:disable-next-line: no-shadowed-variable
-(private authService: AuthService, private router: Router, private DisplayService: DisplayService, private AuthService: AuthService) {
+              private AuthService: AuthService) {
   }
   ngOnInit() {
   }

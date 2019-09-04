@@ -18,7 +18,8 @@ export class DashboardComponent implements OnInit {
     source: new FormControl('', Validators.required),
     popUp: new FormControl('', Validators.required),
     // tslint:disable-next-line: quotemark
-    content: new FormControl('', Validators.required)
+    content: new FormControl('', Validators.required),
+    comments: new FormControl('', Validators.required)
   });
 
   ngOnInit() {
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
     this.DisplayService.addDisplay(this.profileForm.value);
     this.DisplayService.onCreatePost().subscribe(data => {
         console.log(data);
-        this.router.navigate(['/']);
+        this.router.navigate(['sourceData/ALL']);
       });
   }
 

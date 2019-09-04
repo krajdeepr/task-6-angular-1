@@ -1,0 +1,20 @@
+.image{
+    height: 250px;
+    float: left;
+    margin-bottom: 16px;
+}
+.popUpContent{
+    height:65px;
+}
+.label{
+    float: left;
+    margin-right: 10px;
+}
+.form {
+	margin: auto;
+	border-radius: 20px;
+	width: 50%;
+	position: relative;
+	top: 1vh;
+	padding: 20px;
+}
