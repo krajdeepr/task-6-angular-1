@@ -1,0 +1,45 @@
+.image{
+    height:264px;
+    float: left;
+    margin-bottom: 16px;
+    margin-right: 10px;
+}
+.popUpContent{
+    height:65px;
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+.label{
+    float: left;
+    margin-right: 10px;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-size: 20px;
+}
+.form {
+	margin: auto;
+	border-radius: 20px;
+	width: 50%;
+	position: relative;
+	top: 1vh;
+	padding: 20px;
+}
+.total{
+    margin-right: 50px;
+}
+.content{
+    height: 30px;
+    width: 200px;
+    margin-left: 15px;
+    padding-left: 10px;
+}
+.submitButton{
+    height: 36px;
+    margin-left: 10px;
+    width: 107px;
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    background-color: #d64542;
+    color: white;
+    border: 0;
+}
+.commentContent{
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
