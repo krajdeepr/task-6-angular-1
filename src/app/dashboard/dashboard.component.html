@@ -1,19 +1,17 @@
 <div class="form">
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <label for="image">Image url</label>
-  <input type="text" id="image" placeholder="Url" formControlName="image" />
+  <input type="text" id="image" placeholder="Url" formControlName="image" required/>
   <label for="source">News Heading</label>
-  <input type="text" id="heading" placeholder="heading" formControlName="heading" />
+  <input type="text" id="heading" placeholder="heading" formControlName="heading" required/>
   <label for="date">Date</label>
   <input type="text" id="date" placeholder="News Date" formControlName="date" />
   <label for="source">News Source</label>
-  <input type="text" id="source" placeholder="Source" formControlName="source" />
+  <input type="text" id="source" placeholder="Source" formControlName="source" required/>
   <label for="popUp">News Popup</label>
-  <input type="text" id="popUp" placeholder="popUp content" formControlName="popUp" />
+  <input type="text" id="popUp" placeholder="popUp content" formControlName="popUp"/>
   <label for="content">Content</label>
-  <input type="text" id="content" placeholder="News Content" formControlName="content" />
-  <!-- <label for="comments">Comments</label> -->
-  <!-- <input type="text" id="comments" placeholder="News Comments" formControlName="comments" /> -->
-  <input type="submit" value="Submit" />
+  <input type="text" id="content" placeholder="News Content" formControlName="content" required/>
+  <input type="submit" value="Submit" [disabled]="!profileForm.valid" />
 </form>
 </div>

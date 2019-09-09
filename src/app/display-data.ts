@@ -11,7 +11,8 @@ export const displayData: Display[] = [
       content: `He will say that Britain is leaving the European Union on Oct. 31, with or without a deal, and that the British
                 parliament cannot block that, according to a Downing Street source.The United Kingdom is heading towards a
                 constitutional crisis at home and a showdown with the EU as Johnson has repeatedly vowed to leave the bloc on
-                Oct. 31 without a deal unless it agrees to renegotiate the Brexit divorce.`
+                Oct. 31 without a deal unless it agrees to renegotiate the Brexit divorce.`,
+      comments: ``
    },
    {
       id: '2',
@@ -24,7 +25,8 @@ export const displayData: Display[] = [
       content: `Back-to-school lists look a lot different now than they did even 20 years ago, and making sure your child heads
               back to the classroom with the tools they need can put major stress on the bank account.Global News spoke with
               Tanis Ell, a credit counsellor with the Credit Counselling Society Regina, to learn some tips on how to be
-              financially responsible on the journey to Sept. 3.`
+              financially responsible on the journey to Sept. 3.`,
+      comments: ``
    },
    { id: '3',
       image: 'https://shawglobalnews.files.wordpress.com/2019/08/4942954.jpg?quality=70&strip=all&w=720',
@@ -35,7 +37,8 @@ export const displayData: Display[] = [
                 ministers in 1973.`,
       content: `The origins of Canada�s federal office of the Conflict of Interest and Ethics Commissioner can be traced back to
               Prime Minister Justin Trudeau�s father, former prime minister Pierre Trudeau.In the summer of 1973, the elder
-              Trudeau explained why he was introducing new conflict of interest guidelines for federal cabinet ministers.`
+              Trudeau explained why he was introducing new conflict of interest guidelines for federal cabinet ministers.`,
+      comments: ``
    },
    { id: '4',
       image: 'https://shawglobalnews.files.wordpress.com/2019/08/zehra-family.jpg?quality=70&strip=all&w=1200',
@@ -47,6 +50,7 @@ export const displayData: Display[] = [
       content: `Zehra Munshi came to Canada last year to study for her master�s degree in law at the University of Victoria,
               leaving the rest of her family behind in Kashmir.But ever since India imposed a near-constant curfew and
               communications blackout on Aug. 5, Munshi has become one of many who have been unable to call, email or text
-              their parents or siblings.`
+              their parents or siblings.`,
+      comments: ``
    }
 ];

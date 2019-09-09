@@ -3,9 +3,10 @@
     <div class="alert alert-danger" *ngIf="error">
       <p>{{error}}</p>
     </div>
-    <div *ngIf="isLoading">
+    <div *ngIf="isLoading;else login_content">
         <app-loader></app-loader>
     </div>
+    <ng-template #login_content>
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
       <div class="form-group">
         <label for="email">E-Mail</label>
@@ -25,5 +26,6 @@
         </button>
       </div>
     </form>
+  </ng-template>
   </div>
 </div>

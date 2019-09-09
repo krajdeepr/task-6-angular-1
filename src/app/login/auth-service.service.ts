@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { CastExpr, ERROR_COMPONENT_TYPE } from '@angular/compiler';
 export interface AuthResponseData {
 idToken: string;
 email: string;
@@ -63,7 +62,6 @@ export class AuthService {
     return throwError(errorMessage);
   }
   loginAuth(isLoginMode) {
-    console.log(isLoginMode);
     this.loginMode = isLoginMode;
   }
 }

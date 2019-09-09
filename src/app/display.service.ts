@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs';
 import { Display } from './display';
 import { HttpClient } from '@angular/common/http';
-import { tap, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 @Injectable()
 export class DisplayService {
   activatedEmitter = new Subject<boolean>();
@@ -24,13 +24,12 @@ export class DisplayService {
     this.dashBoard = name;
   }
 
-  onCreatePost(): Observable<Display[]> {
+  onCreateArticle(): Observable<Display[]> {
     return this.http
       .post<Display[]>(
         'https://newsfeed-angular.firebaseio.com/posts.json',
         this.dashBoard
       ).pipe(
-        tap(_ => console.log('Posted data')),
         catchError(err => {
           console.log(err);
           return of(null);
@@ -38,11 +37,10 @@ export class DisplayService {
       );
   }
 
-  onGetPost(): Observable<Display[]> {
+  onGetArticle(): Observable<Display[]> {
     return this.http
       .get<Display[]>('https://newsfeed-angular.firebaseio.com/posts.json')
       .pipe(
-        tap(_ => console.log('fetched data')),
         catchError(err => {
           console.log(err);
           return of(null);

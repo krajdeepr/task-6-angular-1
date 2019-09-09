@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
-import { NewsContainer1Component } from './body/news-container1/news-container1.component';
 import { DisplayService } from './display.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -21,7 +20,6 @@ import { AuthGuard } from './authguard.service';
     HeaderComponent,
     FooterComponent,
     BodyComponent,
-    NewsContainer1Component,
     DashboardComponent,
     PopUpComponent,
     LoginComponent,
